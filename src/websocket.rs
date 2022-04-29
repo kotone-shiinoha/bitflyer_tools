@@ -47,22 +47,6 @@ impl BitflyerRealtimeAPI {
     }
     
     async fn event_loop(stream: TcpStream, rx: Receiver<Box<[u8]>>, tx_send_result: Sender<io::Result<()>>, message_handler: fn(&[u8]) -> ()) {
-        let task = async move {
-            let mut buf = vec![];
-            loop {
-                if stream.readable().await.is_ok() {
-                    continue;
-                }
-                match stream.try_read(&mut buf) {
-                    Ok(i) => {
-                        message_handler(&buf[..]);
-                        buf = Vec::with_capacity(buf.capacity());
-                    },
-                    Err(e) if e.kind() == ErrorKind::WouldBlock => continue,
-                    Err(e) => println!("{}", e),
-                };
-            }
-        };
         let task2 = async move {
             loop {
                 match rx.try_recv() {
@@ -93,7 +77,6 @@ impl BitflyerRealtimeAPI {
             }
         };
 
-        tokio::task::spawn(task);
         tokio::task::spawn(task2);
     }
 }
