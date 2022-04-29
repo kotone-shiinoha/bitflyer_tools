@@ -7,6 +7,6 @@ pub struct Parameter<'a> {
     product_code: &'a str,
     condition_type: OrderType,
     side: Side,
-    price: i64,
+    price: Decimal,
     size: Decimal
 }

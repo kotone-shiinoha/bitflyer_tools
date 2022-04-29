@@ -2,7 +2,6 @@ use serde::{Serialize};
 
 use crate::datatypes::{OrderMethod, TimeInForce, Parameter};
 
-const PATH: &str = "/v1/me/sendparentorder";
 #[derive(Serialize)]
 pub struct ParentOrder<'a> {
     order_method: OrderMethod,

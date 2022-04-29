@@ -1,3 +1,4 @@
+use rust_decimal::Decimal;
 use serde::{Serialize, Deserialize};
 use crate::datatypes::{OrderType, Side, TimeInForce};
 
@@ -7,7 +8,7 @@ pub struct NewOrder<'a> {
     #[serde(rename = "child_order_type")] 
     order_type: OrderType,
     side: Side,
-    price: i64,
+    price: Decimal,
     size: f64,
     minute_to_expire: i64,
     time_in_force: TimeInForce
