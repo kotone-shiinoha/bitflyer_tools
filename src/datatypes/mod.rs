@@ -25,4 +25,4 @@ pub use condition_type::ConditionType;
 pub use parent_order::ParentOrder;
 pub use parameter::Parameter;
 pub use cancel_parent_order::CancelParentOrder;
-pub use commission_rate::ComissionRate;
+pub use commission_rate::CommissionRate;
