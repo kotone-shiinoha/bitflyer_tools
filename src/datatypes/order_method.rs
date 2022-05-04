@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
 pub enum OrderMethod {
@@ -9,5 +9,5 @@ pub enum OrderMethod {
     #[serde(rename = "OCO")]
     OneCancelsTheOther,
     #[serde(rename = "IFDOCO")]
-    IfDoneOneCancelsTheOther
+    IfDoneOneCancelsTheOther,
 }

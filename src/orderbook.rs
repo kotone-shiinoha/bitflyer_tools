@@ -4,7 +4,7 @@ use crossbeam::channel::{TryRecvError, Receiver, Sender};
 use serde::{Serialize, Deserialize};
 use tokio::{net::TcpStream, io::{self, AsyncReadExt, AsyncWriteExt}};
 
-const WS_ADDRESS: &str = "wss://ws.lightstream.bitflyer.com/json-rpc";
+const WS_ADDRESS: &str = "wss://ws.lightstream.bitflyer.com/json-rpc:443";
 
 #[derive(Serialize, Deserialize)]
 struct Channel {

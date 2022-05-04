@@ -1,5 +1,5 @@
 use rust_decimal::Decimal;
-use serde::{Serialize};
+use serde::Serialize;
 
 use crate::datatypes::{OrderType, Side};
 #[derive(Serialize)]
@@ -8,5 +8,5 @@ pub struct Parameter<'a> {
     condition_type: OrderType,
     side: Side,
     price: Decimal,
-    size: Decimal
+    size: Decimal,
 }

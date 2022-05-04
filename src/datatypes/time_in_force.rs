@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
 pub enum TimeInForce {
@@ -7,5 +7,5 @@ pub enum TimeInForce {
     #[serde(rename = "IOC")]
     ImmediateOrcancel,
     #[serde(rename = "FOK")]
-    FillOrKill
+    FillOrKill,
 }

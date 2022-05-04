@@ -1,8 +1,7 @@
 use rust_decimal::Decimal;
-use serde::{Serialize, Deserialize};
-
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct CommissionRate {
-    commission_rate: Decimal
+    commission_rate: Decimal,
 }

@@ -1,6 +1,8 @@
+use serde::{Serialize, Deserialize};
 use rust_decimal::Decimal;
 
+#[derive(Serialize, Deserialize, Debug)]
 pub struct PriceLevel {
-    price: Decimal,
-    size: Decimal
+    pub price: Decimal,
+    pub size: Decimal,
 }

@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
@@ -7,5 +7,5 @@ pub enum ConditionType {
     Market,
     Stop,
     StopLimit,
-    Trail
+    Trail,
 }
